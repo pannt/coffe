@@ -1,0 +1,21 @@
+
+<div id = "all">
+<div class = "title">
+チャットとかのタイプのやつ
+</div>
+
+<div class = "creat">
+<p><%= link_to "チャットルーム作成", new_newsinfo_path%></p>
+</div>
+
+<div class = "main">
+<ul>
+	<% @newsinfos.each do |newsinfo| %>
+     <p>
+       <%= link_to newsinfo.title, newsinfo_path(newsinfo.id) %>
+       <%= link_to "ルーム削除", newsinfo_path(newsinfo.id), method: :delete, data: { confirm: "消すよ？" }%>
+     </p>
+	<% end %>
+</ul>
+</div>
+</div>

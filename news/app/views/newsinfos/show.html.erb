@@ -1,0 +1,17 @@
+<h1><%= @newsinfo.title %></h1>
+
+  <ul>
+    <% @newsinfo.tasks.each do |task|%>
+    <li>
+      <%= task.title %>
+    </li>
+  <% end %>
+      
+
+    <li>
+      <%= form_for [@newsinfo, @newsinfo.tasks.build] do |f| %>
+      <%= f.text_field :title %>
+      <%= f.submit %>
+      <% end %>    
+    </li>
+  </ul>

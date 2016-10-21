@@ -1,0 +1,12 @@
+<h1>room name</h1>
+  <%= form_for @newsinfo do |f| %>
+    <p>
+      <%= f.text_field :title %>
+      <% if @newsinfo.errors.any?%>
+      <%= @newsinfo.errors.messages[:title][0] %>
+      <% end %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
